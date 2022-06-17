@@ -1,0 +1,27 @@
+<?template start>
+<html>
+	<body>
+		<table>
+			<?feature *:feature>
+		</table>
+	</body>
+</html>
+
+<?template feature>
+<tr>
+	<td colspan="2" style="border: solid white 0px;">&nbsp;</td>
+</tr>
+<tr style="background-color: #99BBE8;">
+	<td colspan="2" style="border: solid black 1px;"><?name></td>
+</tr>
+<?property *:property>
+
+
+<?template property>
+<tr>
+  <td <?even:evencolor><?odd:oddcolor> valign="top"><strong><?name></strong></td>
+  <td <?even:evencolor><?odd:oddcolor>><?value></td>
+</tr>
+
+<?template oddcolor>style="background-color: #99BBE8;"
+<?template evencolor>style="background-color: white;"

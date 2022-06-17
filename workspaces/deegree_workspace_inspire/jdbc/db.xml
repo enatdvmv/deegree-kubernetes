@@ -1,0 +1,14 @@
+<JDBCConnection configVersion="3.4.0"
+  xmlns="http://www.deegree.org/jdbc"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.deegree.org/jdbc ../appschemas/deegree/jdbc/3.4.0/jdbc.xsd">
+
+  <!-- [1] JDBC URL (without username / password) -->
+  <Url>jdbc:postgresql://myHost:5432/db</Url>
+
+  <!-- [1] DB username -->
+  <User>DB_USER</User>
+
+  <!-- [1] DB password -->
+  <Password>DB_PASSWORD</Password>
+
+</JDBCConnection>

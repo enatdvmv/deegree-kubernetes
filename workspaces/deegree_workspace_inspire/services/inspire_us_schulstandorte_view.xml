@@ -1,0 +1,15 @@
+<deegreeWMS xmlns="http://www.deegree.org/services/wms" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" configVersion="3.4.0" xsi:schemaLocation="http://www.deegree.org/services/wms ../appschemas/deegree/services/wms/3.4.0/wms_configuration.xsd">
+	<ServiceConfiguration>
+		<DefaultLayerOptions>
+			<MaxFeatures>500000</MaxFeatures>
+			<FeatureInfoRadius>10</FeatureInfoRadius>
+		</DefaultLayerOptions>
+		<ThemeId>theme_us_education_wms</ThemeId>
+	</ServiceConfiguration>
+	<FeatureInfoFormats>
+		<GetFeatureInfoFormat>
+			<File>html_einfach.gfi</File>
+			<Format>text/html</Format>
+		</GetFeatureInfoFormat>
+	</FeatureInfoFormats>
+</deegreeWMS>

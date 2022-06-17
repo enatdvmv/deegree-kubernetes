@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SQLFeatureStore xmlns="http://www.deegree.org/datasource/feature/sql" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" configVersion="3.4.0" xsi:schemaLocation="http://www.deegree.org/datasource/feature/sql ../../../appschemas/deegree/datasource/feature/sql/3.4.0/sql.xsd">
+	<JDBCConnId>db</JDBCConnId>
+	<StorageCRS srid="25833" dim="2D">EPSG:25833</StorageCRS>
+	
+	<FeatureTypeMapping name="US.GovernmentalService" table="inspire_us_education.wms_us_education">
+		<FIDMapping>
+			<Column name="id" type="integer"/>
+		</FIDMapping>
+		<Primitive mapping="us_name" path="name"/>
+		<Primitive mapping="us_localid" path="localid"/>
+		<Primitive mapping="us_type" path="type"/>
+		<Primitive mapping="us_postcode" path="postcode"/>
+		<Primitive mapping="us_postname" path="postname"/>
+		<Primitive mapping="us_thoroughfare" path="thoroughfare"/>
+		<Primitive mapping="us_locatordesignator" path="locatordesignator"/>
+		<Primitive mapping="us_email" path="mail"/>
+		<Primitive mapping="us_facsimile" path="facsimile"/>
+		<Primitive mapping="us_voice" path="voice"/>
+		<Primitive mapping="us_website" path="website"/>
+
+		<Geometry mapping="us_geometry" path="us_geometry">
+			<StorageCRS srid="25833" dim="2D">EPSG:25833</StorageCRS>
+		</Geometry>
+	</FeatureTypeMapping>
+	
+</SQLFeatureStore>

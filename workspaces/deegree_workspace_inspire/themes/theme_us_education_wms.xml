@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Themes xmlns="http://www.deegree.org/themes/standard" xmlns:d="http://www.deegree.org/metadata/description" xmlns:s="http://www.deegree.org/metadata/spatial" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" configVersion="3.4.0" xsi:schemaLocation="http://www.deegree.org/themes/standard ../appschemas/deegree/themes/3.4.0/themes.xsd">
+	<LayerStoreId>us/layer_us_education1_wms</LayerStoreId>
+	<LayerStoreId>us/layer_us_education2_wms</LayerStoreId>
+	<LayerStoreId>us/layer_us_education3_wms</LayerStoreId>
+	<LayerStoreId>us/layer_us_education4_wms</LayerStoreId>
+	<LayerStoreId>us/layer_us_education5_wms</LayerStoreId>
+	<LayerStoreId>us/layer_us_education6_wms</LayerStoreId>
+
+	<Theme>
+		<Identifier>US.UtilityAndGovernmentalServices</Identifier>
+		<d:Title>Utility and governmental Services</d:Title>
+		<d:Abstract>Utility and governmental Services (Annex 3)</d:Abstract>
+		<s:CRS>EPSG:25833 EPSG:25832 EPSG:4258 EPSG:3857 EPSG:5650 EPSG:4326 EPSG:3044 EPSG:31467</s:CRS>
+		
+		<Theme>
+			<Identifier>US.PrimaryEducation</Identifier>
+			<d:Title>Primary Education</d:Title>
+			<d:Abstract>Primary Education</d:Abstract>
+			<s:CRS>EPSG:25833 EPSG:25832 EPSG:4258 EPSG:3857 EPSG:5650 EPSG:4326 EPSG:3044 EPSG:31467</s:CRS>
+			<Layer layerStore="us/layer_us_education1_wms">US.PrimaryEducation</Layer>
+		</Theme>
+		
+		<Theme>
+			<Identifier>US.LowerSecondaryEducation</Identifier>
+			<d:Title>Lower secondary Education</d:Title>
+			<d:Abstract>Lower secondary Education</d:Abstract>
+			<s:CRS>EPSG:25833 EPSG:25832 EPSG:4258 EPSG:3857 EPSG:5650 EPSG:4326 EPSG:3044 EPSG:31467</s:CRS>
+			<Layer layerStore="us/layer_us_education2_wms">US.LowerSecondaryEducation</Layer>
+		</Theme>
+		
+		<Theme>
+			<Identifier>US.UpperSecondaryEducation</Identifier>
+			<d:Title>Upper secondary Education</d:Title>
+			<d:Abstract>Upper secondary Education</d:Abstract>
+			<s:CRS>EPSG:25833 EPSG:25832 EPSG:4258 EPSG:3857 EPSG:5650 EPSG:4326 EPSG:3044 EPSG:31467</s:CRS>
+			<Layer layerStore="us/layer_us_education3_wms">US.UpperSecondaryEducation</Layer>
+		</Theme>
+		
+		<Theme>
+			<Identifier>US.PostSecondaryNonTertiaryEducation</Identifier>
+			<d:Title>Post secondary non tertiary Education</d:Title>
+			<d:Abstract>Post secondary non tertiary Education</d:Abstract>
+			<s:CRS>EPSG:25833 EPSG:25832 EPSG:4258 EPSG:3857 EPSG:5650 EPSG:4326 EPSG:3044 EPSG:31467</s:CRS>
+			<Layer layerStore="us/layer_us_education4_wms">US.PostSecondaryNonTertiaryEducation</Layer>
+		</Theme>
+		
+		<Theme>
+			<Identifier>US.BachelorOrEquivalentEducation</Identifier>
+			<d:Title>Bachelor or equivalent Education</d:Title>
+			<d:Abstract>Bachelor or equivalent Education</d:Abstract>
+			<s:CRS>EPSG:25833 EPSG:25832 EPSG:4258 EPSG:3857 EPSG:5650 EPSG:4326 EPSG:3044 EPSG:31467</s:CRS>
+			<Layer layerStore="us/layer_us_education5_wms">US.BachelorOrEquivalentEducation</Layer>
+		</Theme>
+				
+		<Theme>
+			<Identifier>US.EducationNotElsewhereClassified</Identifier>
+			<d:Title>Education not elsewhere classified</d:Title>
+			<d:Abstract>Education not elsewhere classified</d:Abstract>
+			<s:CRS>EPSG:25833 EPSG:25832 EPSG:4258 EPSG:3857 EPSG:5650 EPSG:4326 EPSG:3044 EPSG:31467</s:CRS>
+			<Layer layerStore="us/layer_us_education6_wms">US.EducationNotElsewhereClassified</Layer>
+		</Theme>
+		
+	</Theme>
+</Themes>
