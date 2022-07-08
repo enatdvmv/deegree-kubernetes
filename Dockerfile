@@ -8,9 +8,6 @@ LABEL maintainer="..."
 ENV WORKSPACE=deegree_workspace_inspire
 
 # copy workspace to /tmp/workspaces/
-RUN cd /tmp && \
-    mkdir workspaces
-	
 WORKDIR /tmp/workspaces/
 
 COPY workspaces/${WORKSPACE} ${WORKSPACE}/

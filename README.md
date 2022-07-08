@@ -22,7 +22,7 @@ Der deegree Workspace wird dazu im [Dockerfile](Dockerfile) aus dem Docker-Conte
 
 Username und Passwort werden in einem Secret gespeichert *(base64)*. Wie kommen diese nun in das jdbc-Konfigurationsfile im deegree Workspace? Dazu legen wir 2 Umgebungsvariablen an und verknüpfen sie mit dem Secret. Deegree interpretiert diese aber beim Lesen des jdbc-Konfigurationsfiles nicht. Deshalb weisen wir Kubernetes im [Deployment](kubernetes/deegree3-deployment.yml) an, im Lifecycle postStart, die Werte mit dem Shell Kommando *sed -i* zu setzen. Beide Probleme haben wir damit gelöst.
 
-Es ist noch darauf hinzuweisen, dass wir rekursiv, sämtliche XSD-Schemata lokal im deegree Workspace und *appschemas* vorhalten müssen, da aus den Pods kein http/https Zugriff auf die Schemata möglich ist.
+Es ist noch darauf hinzuweisen, dass wir rekursiv, sämtliche XSD-Schemata lokal im deegree Workspace unter *appschemas* vorhalten müssen, da aus den Pods kein http/https Zugriff auf die Schemata möglich ist.
 
 
 ## kubectl Namespace
@@ -88,6 +88,8 @@ Und testen die beiden deegree Web-Services (WMS und WFS) in QGIS. Bzw. den WFS �
 URL: http://myHost/deegree-webservices/services/inspire_us_schulstandorte_download?service=WFS&version=2.0.0&request=GetFeature&typeName=us-govserv:GovernmentalService&Count=10
 
 Für den produktiven Betrieb der deegree WebServices benötigen wir noch 3 weitere Dateien *(main.xml, context.xml, rewrite.config)*, die beispielsweise über configMaps bereitgestellt werden könnten.
+
+Den *DEEGREE_WORKSPACE_ROOT* für den MainContainer setzen wir auf */var/lib/tomcat/.deegree* und arbeiten als *tomcat* User, d.h. ohne *root* Zugriff.
 
 
 ## Summary

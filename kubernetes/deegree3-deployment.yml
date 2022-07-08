@@ -16,7 +16,7 @@ spec:
     spec:
       initContainers:
       - name: deegree3-init-container
-        image: "docker-dev/deegree3-test-k8s-init:0.1.3"
+        image: "docker-dev/deegree3-test-k8s-init:0.1.8"
         command: ['sh', '-c', 'cp -R /tmp/workspaces/* /root/.deegree']
         volumeMounts:
         - mountPath: /root/.deegree
@@ -27,7 +27,7 @@ spec:
         ports:
           - containerPort: 8080
         volumeMounts:
-        - mountPath: /root/.deegree
+        - mountPath: /var/lib/tomcat/.deegree
           name: deegree3-volume 
         env:
         - name: DB_USER
@@ -43,7 +43,7 @@ spec:
         lifecycle:
           postStart:
             exec:
-              command: ['/bin/sh', '-c', 'sed -i "s/DB_USER/$DB_USER/" /root/.deegree/deegree_workspace_inspire/jdbc/db.xml; sed -i "s/DB_PASSWORD/$DB_PASSWORD/" /root/.deegree/deegree_workspace_inspire/jdbc/db.xml']
+              command: ['/bin/sh', '-c', 'sed -i "s/DB_USER/$DB_USER/" /var/lib/tomcat/.deegree/deegree_workspace_inspire/jdbc/db.xml; sed -i "s/DB_PASSWORD/$DB_PASSWORD/" /var/lib/tomcat/.deegree/deegree_workspace_inspire/jdbc/db.xml']
       volumes:
       - name: deegree3-volume
         emptyDir: {}
