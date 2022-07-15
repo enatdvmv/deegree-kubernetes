@@ -102,7 +102,9 @@ kubectl get ing
 Sehen uns in den Pods um.
 ```
 kubectl exec -it myPodName -- /bin/sh
-cd /root/.deegree
+cd webapps
+ls -l
+cd /var/lib/tomcat/.deegree
 ls -l
 exit
 
@@ -125,4 +127,4 @@ URL: http://myHost/deegree-webservices/services/inspire_us_schulstandorte_downlo
 
 
 ## Summary
-In diesem Repository haben wir einen Lösungsweg aufgezeigt, wie deegree WebServices in einem Kubernetes-Cluster betrieben werden können. Dazu haben wir einen Weg über InitialContainer gewählt, was im Deployment für etwas Getüttel sorgt. Der einfachere Weg, alles in einem einzigen Container, erscheint mir daher im Nachhinein als die bessere Alternative. I.d.F. erhöhen wir dann die Anzahl er Replicas.
+In diesem Repository haben wir einen Lösungsweg aufgezeigt, wie deegree WebServices in einem Kubernetes-Cluster betrieben werden können. Dazu haben wir einen Weg über InitialContainer gewählt, was im Deployment für etwas Getüttel sorgt. Der einfachere Weg, alles in einem einzigen Container, erscheint mir daher im Nachhinein als die bessere Alternative. I.d.F. erhöhen wir dann die Anzahl der Replicas.
