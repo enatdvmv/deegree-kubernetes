@@ -14,16 +14,18 @@ spec:
       labels:
         app: deegree3
     spec:
+      securityContext:
+        fsGroup: 999
       initContainers:
       - name: deegree3-init-container
-        image: "docker-dev/deegree3-test-k8s-init:0.1.8"
-        command: ['sh', '-c', 'cp -R /tmp/workspaces/* /root/.deegree']
+        image: "docker-dev/deegree3-test-k8s-init:0.1.9"
+        command: ['sh', '-c', 'cp -R /tmp/workspaces/* /var/lib/tomcat/.deegree']
         volumeMounts:
-        - mountPath: /root/.deegree
+        - mountPath: /var/lib/tomcat/.deegree
           name: deegree3-volume
       containers:
       - name: deegree3
-        image: "docker-dev/deegree3-test-k8s:0.1.4"
+        image: "docker-dev/deegree3-test-k8s:0.2.5"
         ports:
           - containerPort: 8080
         volumeMounts:
@@ -43,7 +45,7 @@ spec:
         lifecycle:
           postStart:
             exec:
-              command: ['/bin/sh', '-c', 'sed -i "s/DB_USER/$DB_USER/" /var/lib/tomcat/.deegree/deegree_workspace_inspire/jdbc/db.xml; sed -i "s/DB_PASSWORD/$DB_PASSWORD/" /var/lib/tomcat/.deegree/deegree_workspace_inspire/jdbc/db.xml']
+              command: ['/bin/sh', '-c', 'sed -i "s/DB_USER/$DB_USER/" /var/lib/tomcat/.deegree/deegree_workspace_inspire/jdbc/geodaten_zentral.xml; sed -i "s/DB_PASSWORD/$DB_PASSWORD/" /var/lib/tomcat/.deegree/deegree_workspace_inspire/jdbc/geodaten_zentral.xml; cp /var/lib/tomcat/.deegree/config/rewrite.config /tmp/deegree-webservices/WEB-INF/rewrite.config; cp /var/lib/tomcat/.deegree/config/context.xml /tmp/deegree-webservices/META-INF/context.xml; cd /tmp; jar -cvf deegree-webservices.war -C deegree-webservices .; mv /tmp/deegree-webservices.war /usr/local/tomcat/webapps/deegree-webservices.war']
       volumes:
       - name: deegree3-volume
         emptyDir: {}

@@ -1,0 +1,29 @@
+<Context>
+	<!--
+		Setting allowLinking="true" is required by the
+		displaces/linked file web.xml
+	-->
+	<Resources allowLinking="true" />
+	
+	<!-- 
+		enable URLrewrite for this webapp  -  for setup see /webapp/WEB-INF/rewrite.config 
+	-->
+    <Valve className="org.apache.catalina.valves.rewrite.RewriteValve"/>
+	
+	
+	<Valve className="org.apache.catalina.valves.RemoteIpValve"
+                trustedProxies="XX\.XX\.XXX\.XX|XX\.XX\.XXX\.XY"
+                internalProxies="XX\.XX\.XXX\.XX|XX\.XX\.XXX\.XY"
+                remoteIpHeader="x-forwarded-for"
+                proxiesHeader="x-forwarded-by"
+                protocolHeader="x-forwarded-proto" />
+        <!--
+                Although Login into this application is granted using the insecure
+                http protocol, other requests require using the https protocol.
+                One way to workaround it, is to pass the header "X-Forwarded-Proto: https".
+                The sender address needs to be listed as trusted router here:
+		-->
+	
+
+</Context>
+
